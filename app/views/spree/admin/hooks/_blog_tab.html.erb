@@ -1,0 +1,3 @@
+<ul class="nav nav-sidebar">
+	<%= tab(:blog_entries, :label => 'Blog', :url => spree.admin_blog_entries_path, :icon => 'file') if can? :manage, Spree::BlogEntry %>
+</ul>
