@@ -1,9 +1,9 @@
 <% content_for :page_title do %>
-   <%= Spree.t(:editing) %>: <%= @blog_entry.title %>
+   <%= link_to Spree.t(:blog_entries), admin_blog_entries_path %> / <%= @blog_entry.title.titleize.truncate(30) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <li><%= button_link_to Spree.t(:back_to_blog_list), spree.admin_blog_entries_url, :icon => 'arrow-left' %></li>
+  <%= button_link_to Spree.t(:new_blog_entry), new_object_url, { class: "btn-success", icon: 'add', id: 'admin_new_blog_entry' } %>
 <% end %>
 
 <%= render "spree/shared/error_messages", :target => @blog_entry %>
